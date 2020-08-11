@@ -4,6 +4,7 @@ Deployed Vercel portfolio link: [my-portfolio.nick-jarvie.vercel.app](https://my
 
 ## About this Project
 
+Instructions: [marcusklein/sot-full-stack-javascript](https://github.com/marcusklein/sot-full-stack-javascript)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
