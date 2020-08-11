@@ -1,3 +1,9 @@
+# My github Portfolio
+
+Deployed Vercel portfolio link: [my-portfolio.nick-jarvie.vercel.app](https://my-portfolio.nick-jarvie.vercel.app).
+
+## About this Project
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
