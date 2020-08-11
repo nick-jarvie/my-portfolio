@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Button from '@material-ui/core/Button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    // Initialize state
+    const [ projects, setProjects ] = useState([]);
+
+    // Get projects
+    useEffect(() => {
+      fetch('/api/projects')
+            .then(res => res.json())
+            .then(projects => setProjects(projects));
+    },[]);
+
+    return (
+        <div className="App">
+
+            <h1>Hi, my name is Nick!</h1>
+            <h3>I'm a developer</h3>
+
+            <h4>Here are a few of my projects</h4>
+
+            {
+                projects.length ? (
+                    projects.map((project) => (
+                      <div style={{padding: 10}} key={project.name}>
+                      <Button 
+                          variant="contained"
+                          href={project.html_url}>
+                          {project.name}
+                      </Button>
+                      <p>{project.description}</p>
+                  </div>
+                    ))
+                ) : (
+                    <div>
+                        Loading projects..
+                    </div>
+                )
+            }
+        </div>
+    );
 }
 
 export default App;
